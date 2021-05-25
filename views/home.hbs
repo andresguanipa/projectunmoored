@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <title>Project Unmoored</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="icon" href="assets/imagens/favicon.png" type="image/x-icon" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=IM+Fell+DW+Pica+SC&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <i onclick="mostrar(this)" class="fa fa-moon-o fa-2x night_mode"></i>
+
+    <img id="userPhoto" src="assets/imagens/perfil.png" alt="User Photo">
+
+    <spam id="userName">Project Unmoored</spam>
+
+    <div id="links">
+        <a class="link" href="https://drive.google.com/file/d/1zNTs6WbdL_z-tHwLwaBWj5swmw76Vv69/view?usp=sharing" target="_blank" style="border-radius: 25px;">Project Unmoored</a>
+        <a class="link" href="https://drive.google.com/file/d/1IfiCskMG9ExkZnNmdXSdcx84fdYpBc7v/view?usp=sharing" target="_blank" style="border-radius: 25px;">Background and Context</a>
+        <a class="link" href="https://drive.google.com/file/d/1mC9xitG0dAUg4xQNawdNxS4V7Da9ekYh/view?usp=sharing" target="_blank" style="border-radius: 25px;">Psychological Care Lines</a>
+        <a class="link" href="https://drive.google.com/file/d/16hb99bEligUBDK40jht43CXSvJ4WU8ts/view?usp=sharing" target="_blank" style="border-radius: 25px;">Reporting Child Abuse</a>
+        <a class="link" href="https://drive.google.com/file/d/1m57cYrn84efIuW2VGN9ItWakFJiO-Gz1/view?usp=sharing" target="_blank" style="border-radius: 25px;">About Us</a>
+        <a class="link" href="https://drive.google.com/drive/folders/1sj5pwcPDhLMtCoPo-iIzhTN0oY4iukEV?usp=sharing" target="_blank" style="border-radius: 25px;">Other Resources</a>
+    </div>
+
+    <div class="form">
+        <form action="/users" method="POST">
+
+            <h1 class="form-font" id='signup'>Sign Up</h1>
+            <input class="form-font" type="email" placeholder="Email" id="email" name="email">
+            <input class="form-font" type="text" placeholder="Nombre" id="nombre" name="nombre">
+            <div id="texto">
+                <p id="alert" style="color:black;"><b>{{texto validacion ok}}</b></p>
+            </div>
+            <button class="link" style="border-radius: 25px;">Send Information</button>
+        </form>
+    </div>
+
+    <div class="footer">
+        <a href="https://twitter.com/projectunmoored" target="_blank">
+            <i class="icon fab fa-twitter-square fa-2x twitter-square"></i>
+        </a>
+    </div>
+
+    <!-- Javascript -->
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+    <script src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script>
+    <script src="socket.io/socket.io.js"></script>
+    <script src="./assets/js/script.js"></script>
+    <script src="./assets/js/socket-custom.js"></script>
+
+</body>
+
+</html>
