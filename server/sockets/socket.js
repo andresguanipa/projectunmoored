@@ -2,14 +2,16 @@ const { io } = require('../server')
 
 const Users = require('../models/users')
 
+const {validaEmail} = require('../../validaciones/validaciones');
+
 io.on('connection', (client) => {
 
     //Mensaje retroalimentación
 
     client.on('retroalimentacion', (data, callback) => {
 
-        if (!data || data.trim() === "") {
-            callback({ resp: 'El email NO puede estar vacio' });
+        if (!data || data.trim() === "" || validaEmail(data) === false) {
+            callback({ resp: 'El email ingresado es incorrecto' });
 
         } else {
 

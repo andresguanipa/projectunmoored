@@ -6,7 +6,7 @@ const nombre = document.querySelector('#nombre');
 const email = document.querySelector('#email');
 const div = document.getElementById("texto")
 
-nombre.addEventListener('click',function(){
+nombre.addEventListener('focus',function(){
 
     socket.emit('retroalimentacion', email.value, function(res) {
 

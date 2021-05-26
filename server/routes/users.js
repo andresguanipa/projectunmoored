@@ -4,6 +4,8 @@ const path = require('path');
 
 const Users = require('../models/users');
 
+const {validaEmail, validaStringNoNumerico} = require('../../validaciones/validaciones');
+
 const app = express();
 
 app.get('/',(req,res) => {
@@ -16,6 +18,13 @@ app.post('/users', (req, res) => {
     const fecha = `${dte.getDate()}/${dte.getMonth() + 1}/${dte.getFullYear()} - ${dte.getHours()}:${dte.getMinutes()}`;
 
     const {nombre, email} = req.body;
+
+    if(validaEmail(email) === false || validaStringNoNumerico(nombre) === false){
+        return res.render('home',{
+            ok: true,
+            validacion: true,
+        });
+    }
 
     let user = new Users({
         name: nombre,
