@@ -12,7 +12,7 @@ app.get('/',(req,res) => {
     res.render('home');
 })
 
-app.post('/users', (req, res) => {
+app.post('/', (req, res) => {
 
     let dte = new Date();
     const fecha = `${dte.getDate()}/${dte.getMonth() + 1}/${dte.getFullYear()} - ${dte.getHours()}:${dte.getMinutes()}`;
